@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniket Singh | Cybersecurity & AI Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #00ff88;
+            --secondary: #0066ff;
+            --accent: #ff2a6d;
+            --dark: #0a0a16;
+            --darker: #050510;
+            --light: #e0e0ff;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: var(--darker);
+            color: var(--light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Background Animation */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(125deg, var(--darker) 0%, var(--dark) 100%);
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 255, 136, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 102, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 42, 109, 0.05) 0%, transparent 50%);
+            animation: pulse 15s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.7; }
+        }
+
+        /* Matrix Rain Effect */
+        .matrix-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 22, 0.7);
+            border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-text h1 span {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: rgba(224, 224, 255, 0.8);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: var(--transition);
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(0, 255, 136, 0.1);
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .floating-card {
+            width: 320px;
+            height: 320px;
+            background: rgba(10, 10, 22, 0.7);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 8s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            color: var(--dark);
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--primary);
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        /* About Section */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: rgba(224, 224, 255, 0.8);
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat {
+            background: rgba(10, 10, 22, 0.7);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            transition: var(--transition);
+        }
+
+        .stat:hover {
+            border-color: rgba(0, 255, 136, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(224, 224, 255, 0.7);
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skill-card {
+            background: rgba(10, 10, 22, 0.7);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 255, 136, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-card.cybersecurity {
+            border-color: rgba(255, 42, 109, 0.2);
+        }
+
+        .skill-card.cybersecurity:hover {
+            border-color: rgba(255, 42, 109, 0.4);
+        }
+
+        .skill-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .skill-card.cybersecurity h3 {
+            color: var(--accent);
+        }
+
+        .skill-card p {
+            color: rgba(224, 224, 255, 0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .skill-card.cybersecurity .skill-tag {
+            background: rgba(255, 42, 109, 0.1);
+            color: var(--accent);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: rgba(10, 10, 22, 0.7);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 255, 136, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.1);
+        }
+
+        .project-img {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+            color: var(--dark);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .project-content p {
+            color: rgba(224, 224, 255, 0.7);
+            margin-bottom: 1rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tags span {
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Project Status Styles */
+.project-status {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, var(--accent), #ff6b9d);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    animation: pulse 2s infinite;
+}
+
+.project-img {
+    position: relative;
+    height: 200px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: var(--dark);
+}
+
+.status-badge {
+    background: linear-gradient(135deg, var(--accent), #ff6b9d);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* In-progress project specific styles */
+.project-card:nth-child(3) .project-img,
+.project-card:nth-child(4) .project-img {
+    background: linear-gradient(135deg, #ff6b9d, var(--accent));
+}
+
+        /* Contact Section */
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(0, 255, 136, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.8rem 1rem;
+            background: rgba(10, 10, 22, 0.7);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            border-radius: 8px;
+            color: var(--light);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+        }
+
+        .submit-btn {
+            padding: 0.8rem 2rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            align-self: flex-start;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(5, 5, 16, 0.9);
+            padding: 3rem 5%;
+            text-align: center;
+            border-top: 1px solid rgba(0, 255, 136, 0.1);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(0, 255, 136, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            color: rgba(224, 224, 255, 0.5);
+            font-size: 0.9rem;
+        }
+        .built-with {
+    color: rgba(224, 224, 255, 0.7);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.built-with .fa-heart {
+    color: var(--accent);
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    5% { transform: scale(1.1); }
+    10% { transform: scale(1); }
+    15% { transform: scale(1.1); }
+    20% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+        /* Chatbot Styles */
+        .chatbot-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--dark);
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .chatbot-container {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 350px;
+            height: 500px;
+            background: rgba(10, 10, 22, 0.95);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            z-index: 1000;
+            overflow: hidden;
+            transform: translateY(20px);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .chatbot-container.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .chatbot-header {
+            padding: 1rem;
+            background: rgba(0, 255, 136, 0.1);
+            border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .chatbot-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+
+        .chatbot-title {
+            font-weight: 600;
+        }
+
+        .chatbot-status {
+            font-size: 0.8rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .chatbot-status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--primary);
+            animation: pulse-dot 2s infinite;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 0.8rem 1rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .message.bot {
+            align-self: flex-start;
+            background: rgba(0, 255, 136, 0.1);
+            border-bottom-left-radius: 5px;
+        }
+
+        .message.user {
+            align-self: flex-end;
+            background: rgba(0, 102, 255, 0.2);
+            border-bottom-right-radius: 5px;
+        }
+
+        .chatbot-input {
+            padding: 1rem;
+            border-top: 1px solid rgba(0, 255, 136, 0.2);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            background: rgba(10, 10, 22, 0.7);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            border-radius: 30px;
+            color: var(--light);
+            font-size: 0.9rem;
+        }
+
+        .chatbot-input input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .chatbot-send {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--dark);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .chatbot-send:hover {
+            transform: scale(1.1);
+        }
+
+        .suggested-questions {
+            padding: 0.5rem 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            border-top: 1px solid rgba(0, 255, 136, 0.1);
+        }
+
+        .suggested-question {
+            padding: 0.4rem 0.8rem;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 15px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .suggested-question:hover {
+            background: rgba(0, 255, 136, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content, .about-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .chatbot-container {
+                width: 300px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .floating-card {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .cta-buttons {
+                justify-content: center;
+            }
+            
+            .chatbot-container {
+                width: calc(100% - 40px);
+                right: 20px;
+                bottom: 90px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation"></div>
+    
+    <!-- Matrix Rain Effect -->
+    <canvas class="matrix-rain" id="matrixCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">ANIKET</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Hi, I'm <span>Aniket Singh</span></h1>
+                <div class="tagline">Cybersecurity & AI Developer</div>
+                <p>Building secure digital futures with cutting-edge technology. Specializing in cybersecurity solutions, AI integration, and full-stack development.</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="cta-button">View My Work</a>
+                    <a href="#contact" class="cta-button secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card">
+                    <div class="avatar">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Aniket Singh</h3>
+                    <p>Cybersecurity Beginner</p>
+                    <div class="status">
+                        <div class="status-dot"></div>
+                        <span>Available for opportunities</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>Securing the digital world, one line of code at a time</p>
+        </div>
+        <div class="about-container">
+            <div class="about-text">
+                <p>I'm a passionate B.Sc. IT Student with a strong focus on Cybersecurity and Artificial Intelligence. My journey in technology began with curiosity about how systems work and how to make them more secure.</p>
+                <p>Currently, I'm expanding my expertise in cybersecurity while working on innovative projects that combine AI with security protocols. My goal is to develop solutions that protect digital assets and ensure data privacy in an increasingly connected world.</p>
+                <p>When I'm not coding, I'm participating in CTF challenges, researching new security vulnerabilities, or contributing to open-source security projects.</p>
+                <p><strong>Fun Fact:</strong> You can't predict my next steps 🚀 … unless you're an AI model 🤖</p>
+                <p><strong>My Motto:</strong> "Code securely, build smartly, and keep learning."</p>
+            </div>
+            <div class="about-stats">
+                <div class="stat">
+                    <div class="stat-value">20+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">Programming Languages</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">100+</div>
+                    <div class="stat-label">LeetCode Problems</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">2</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="section-title">
+            <h2>My Skills</h2>
+            <p>Technologies I work with</p>
+        </div>
+        <div class="skills-container">
+            <div class="skill-card cybersecurity">
+                <h3>Cybersecurity</h3>
+                <p>Specializing in securing applications and systems against modern threats.</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">Network Security</span>
+                    <span class="skill-tag">Encryption</span>
+                    <span class="skill-tag">Vulnerability Assessment</span>
+                    <span class="skill-tag">Penetration Testing</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Programming Languages</h3>
+                <p>Proficient in multiple languages for diverse development needs.</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">C#</span>
+                    <span class="skill-tag">C</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>AI & Machine Learning</h3>
+                <p>Developing intelligent systems and algorithms.</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">Neural Networks</span>
+                    <span class="skill-tag">Data Analysis</span>
+                    <span class="skill-tag">Computer Vision</span>
+                    <span class="skill-tag">Automation</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Web Development</h3>
+                <p>Full-stack development with modern frameworks and tools.</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">MERN Stack</span>
+                    <span class="skill-tag">React.js</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">Express.js</span>
+                    <span class="skill-tag">ASP.NET</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">SQL Server</span>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Projects Section -->
+<section id="projects">
+    <div class="section-title">
+        <h2>My Projects</h2>
+        <p>Showcasing my technical expertise</p>
+    </div>
+    <div class="projects-grid">
+        <div class="project-card">
+            <div class="project-img">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="project-content">
+                <h3>E-commerce Platform</h3>
+                <p>A full-featured MERN stack e-commerce solution with user authentication, product management, and secure payment processing.</p>
+                <div class="project-tags">
+                    <span>MERN Stack</span>
+                    <span>JWT Auth</span>
+                    <span>Stripe API</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Singhaniket2110" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+        </div>
+        <div class="project-card">
+            <div class="project-img">
+                <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="project-content">
+                <h3>Job Portal</h3>
+                <p>A LinkedIn-inspired job portal built with MERN stack, featuring job listings, user profiles, and application tracking.</p>
+                <div class="project-tags">
+                    <span>MERN Stack</span>
+                    <span>REST API</span>
+                    <span>MongoDB</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Singhaniket2110" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+        </div>
+        <div class="project-card">
+            <div class="project-img">
+                <i class="fas fa-brain"></i>
+                <div class="project-status">In Progress</div>
+            </div>
+            <div class="project-content">
+                <h3>Aurion AI <span class="status-badge">Developing</span></h3>
+                <p>An offline AI assistant with local processing capabilities, focusing on privacy and security without cloud dependencies.</p>
+                <div class="project-tags">
+                    <span>Python</span>
+                     <span>HTML</span>
+                    <span>Machine Learning</span>
+                    <span>Local AI</span>
+                    <span>Privacy-focused</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Singhaniket2110" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+        </div>
+        <div class="project-card">
+            <div class="project-img">
+                <i class="fas fa-university"></i>
+                <div class="project-status">In Progress</div>
+            </div>
+            <div class="project-content">
+                <h3>AcadEase <span class="status-badge">Developing</span></h3>
+                <p>An E-counter website for college administration, streamlining student services and administrative tasks with modern web technologies.</p>
+                <div class="project-tags">
+                    <span>C#</span>
+                    <span>.NET</span>
+                    <span>SQL Server</span>
+
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Singhaniket2110" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+        </div>
+        <div class="project-card">
+            <div class="project-img">
+                <i class="fas fa-plane"></i>
+            </div>
+            <div class="project-content">
+                <h3>Airline Management System</h3>
+                <p>A comprehensive system for managing airline operations, bookings, and customer data with secure transactions.</p>
+                <div class="project-tags">
+                    <span>PHP</span>
+                    <span>Bootstrap</span>
+                    <span>MySQL</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Singhaniket2110" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+        </div>
+        <div class="project-card">
+            <div class="project-img">
+                <i class="fas fa-cloud-sun"></i>
+            </div>
+            <div class="project-content">
+                <h3>Weather Webpage</h3>
+                <p>A responsive weather application that displays current conditions and forecasts with an intuitive user interface.</p>
+                <div class="project-tags">
+                    <span>JavaScript</span>
+                    <span>API Integration</span>
+                    <span>Responsive Design</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Singhaniket2110" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+            <p>Let's build secure digital solutions together</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3>Email</h3>
+                        <p>aniket.vpsingh@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div>
+                        <h3>GitHub</h3>
+                        <p>github.com/Singhaniket2110</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div>
+                        <h3>LinkedIn</h3>
+                        <p>in/aniket-virendra-pratap-singh-aniket21</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div>
+                        <h3>LeetCode</h3>
+                        <p>leetcode.com/u/aniket2110</p>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" placeholder="Enter subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" rows="5" placeholder="How can I help you?" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+<!-- Footer -->
+<footer>
+    <div class="social-links">
+        <a href="https://github.com/Singhaniket2110" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/aniket-virendra-pratap-singh-aniket21/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://leetcode.com/u/aniket2110" target="_blank"><i class="fas fa-code"></i></a>
+        <a href="mailto:aniket.vpsingh@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p class="built-with">Securely built with <i class="fas fa-heart"></i> by Aniket Singh</p>
+    <p class="copyright">© 2024 Aniket Singh. All rights reserved.</p>
+</footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot-toggle" id="chatbotToggle">
+        <i class="fas fa-robot"></i>
+    </div>
+
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <div class="chatbot-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div>
+                <div class="chatbot-title">Aniket's ChatBot</div>
+                <div class="chatbot-status">
+                    <div class="chatbot-status-dot"></div>
+                    <span>Online</span>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="message bot">
+                Hi! I'm Aniket's AI assistant. How can I help you learn more about him?
+            </div>
+        </div>
+        <div class="suggested-questions">
+            <div class="suggested-question" data-question="What are Aniket's skills?">Skills</div>
+            <div class="suggested-question" data-question="Tell me about Aniket's projects">Projects</div>
+            <div class="suggested-question" data-question="How to contact Aniket?">Contact</div>
+            <div class="suggested-question" data-question="What is Aniket's education?">Education</div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbotInput" placeholder="Ask me about Aniket...">
+            <div class="chatbot-send" id="chatbotSend">
+                <i class="fas fa-paper-plane"></i>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Matrix Rain Effect
+        const canvas = document.getElementById('matrixCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const characters = '01';
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        
+        const drops = [];
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+        
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(5, 5, 16, 0.04)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = '#00ff88';
+            ctx.font = fontSize + 'px monospace';
+            
+            for (let i = 0; i < drops.length; i++) {
+                const text = characters.charAt(Math.floor(Math.random() * characters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                
+                drops[i]++;
+            }
+        }
+        
+        setInterval(drawMatrix, 35);
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+        
+        // Simple scroll animation for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add subtle animation to elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.skill-card, .project-card, .stat').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+
+        // Chatbot functionality
+        const chatbotToggle = document.getElementById('chatbotToggle');
+        const chatbotContainer = document.getElementById('chatbotContainer');
+        const chatbotMessages = document.getElementById('chatbotMessages');
+        const chatbotInput = document.getElementById('chatbotInput');
+        const chatbotSend = document.getElementById('chatbotSend');
+        const suggestedQuestions = document.querySelectorAll('.suggested-question');
+
+        // Toggle chatbot visibility
+        chatbotToggle.addEventListener('click', function() {
+            chatbotContainer.classList.toggle('active');
+        });
+
+        // Send message function
+        function sendMessage() {
+            const message = chatbotInput.value.trim();
+            if (message === '') return;
+
+            // Add user message
+            addMessage(message, 'user');
+            chatbotInput.value = '';
+
+            // Generate bot response
+            setTimeout(() => {
+                const response = generateResponse(message);
+                addMessage(response, 'bot');
+            }, 1000);
+        }
+
+        // Add message to chat
+        function addMessage(text, sender) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', sender);
+            messageElement.textContent = text;
+            chatbotMessages.appendChild(messageElement);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        // Generate bot response
+        function generateResponse(message) {
+            const lowerMessage = message.toLowerCase();
+
+            // Skills related questions
+            if (lowerMessage.includes('skill') || lowerMessage.includes('technology') || lowerMessage.includes('programming')) {
+                return "Aniket has expertise in:\n- Programming: Python, Java, C#, C, C++, JavaScript, SQL\n- Web Development: MERN Stack, ASP.NET, HTML/CSS\n- Cybersecurity: Network Security, Encryption, Vulnerability Assessment\n- AI/ML: TensorFlow, Neural Networks, Data Analysis\n- Tools: Git, GitHub, VS Code, MySQL, SQL Server";
+            }
+
+            // Projects related questions
+            else if (lowerMessage.includes('project') || lowerMessage.includes('work') || lowerMessage.includes('portfolio')) {
+                return "Aniket has worked on several projects:\n- E-commerce Platform (MERN Stack)\n- Job Portal (MERN Stack, similar to LinkedIn)\n- AcadEase (E-counter website for college)\n- Airline Management System (C#, .NET)\n- Weather Webpage\nYou can find more details on his GitHub: github.com/Singhaniket2110";
+            }
+
+            // Contact related questions
+            else if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('reach')) {
+                return "You can contact Aniket through:\n- Email: aniket.vpsingh@gmail.com\n- LinkedIn: linkedin.com/in/aniket-virendra-pratap-singh-aniket21\n- GitHub: github.com/Singhaniket2110\n- LeetCode: leetcode.com/u/aniket2110";
+            }
+
+            // Education related questions
+            else if (lowerMessage.includes('education') || lowerMessage.includes('study') || lowerMessage.includes('degree')) {
+                return "Aniket is currently pursuing a B.Sc. in Information Technology. He's passionate about Cybersecurity and AI, and is constantly learning new technologies through projects and online platforms like LeetCode where he's solved 1000+ problems.";
+            }
+
+            // About related questions
+            else if (lowerMessage.includes('about') || lowerMessage.includes('who') || lowerMessage.includes('introduce')) {
+                return "Aniket Singh is a B.Sc. IT Student specializing in Cybersecurity and AI. He's passionate about building secure digital solutions and intelligent systems. His motto is 'Code securely, build smartly, and keep learning.' He's open to collaborations on software, cybersecurity, and AI-related projects.";
+            }
+
+            // Experience related questions
+            else if (lowerMessage.includes('experience') || lowerMessage.includes('year') || lowerMessage.includes('work experience')) {
+                return "Aniket has 2+ years of experience in software development with a focus on cybersecurity and AI. He has completed 20+ projects and solved 1000+ coding problems on LeetCode to sharpen his skills.";
+            }
+
+            // Interests related questions
+            else if (lowerMessage.includes('interest') || lowerMessage.includes('hobby') || lowerMessage.includes('passion')) {
+                return "Aniket is passionate about:\n- Cybersecurity concepts and practices\n- Artificial Intelligence and Machine Learning\n- Solving real-world problems with code\n- Participating in CTF challenges\n- Researching security vulnerabilities\n- Contributing to open-source projects";
+            }
+
+            // Default response
+            else {
+                return "I'm not sure I understand. You can ask me about Aniket's skills, projects, education, contact information, or experience. Try clicking one of the suggested questions above!";
+            }
+        }
+
+        // Event listeners for chatbot
+        chatbotSend.addEventListener('click', sendMessage);
+        chatbotInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Suggested questions
+        suggestedQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                const questionText = this.getAttribute('data-question');
+                chatbotInput.value = questionText;
+                sendMessage();
+            });
+        });
+    </script>
+</body>
+</html>
