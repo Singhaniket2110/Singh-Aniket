@@ -30,7 +30,6 @@
             line-height: 1.6;
         }
 
-        /* Background Animation */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -61,7 +60,6 @@
             100% { opacity: 0.7; }
         }
 
-        /* Matrix Rain Effect */
         .matrix-rain {
             position: fixed;
             top: 0;
@@ -73,7 +71,6 @@
             pointer-events: none;
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -111,9 +108,7 @@
             transition: var(--transition);
         }
 
-        .nav-links a:hover {
-            color: var(--primary);
-        }
+        .nav-links a:hover { color: var(--primary); }
 
         .nav-links a::after {
             content: '';
@@ -126,11 +121,8 @@
             transition: var(--transition);
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+        .nav-links a:hover::after { width: 100%; }
 
-        /* Mobile Navigation */
         .mobile-menu-toggle {
             display: none;
             flex-direction: column;
@@ -149,19 +141,10 @@
             transition: var(--transition);
         }
 
-        .mobile-menu-toggle.active span:nth-child(1) {
-            transform: translateY(9px) rotate(45deg);
-        }
+        .mobile-menu-toggle.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+        .mobile-menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .mobile-menu-toggle.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-        .mobile-menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .mobile-menu-toggle.active span:nth-child(3) {
-            transform: translateY(-9px) rotate(-45deg);
-        }
-
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -206,11 +189,7 @@
             color: rgba(224, 224, 255, 0.8);
         }
 
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
+        .cta-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
 
         .cta-button {
             display: inline-block;
@@ -230,14 +209,8 @@
             color: var(--primary);
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
-        }
-
-        .cta-button.secondary:hover {
-            background: rgba(0, 255, 136, 0.1);
-        }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 0 20px rgba(0, 255, 136, 0.5); }
+        .cta-button.secondary:hover { background: rgba(0, 255, 136, 0.1); }
 
         .hero-visual {
             position: relative;
@@ -321,15 +294,9 @@
             100% { opacity: 1; }
         }
 
-        /* Sections */
-        section {
-            padding: 6rem 5%;
-        }
+        section { padding: 6rem 5%; }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
+        .section-title { text-align: center; margin-bottom: 4rem; }
 
         .section-title h2 {
             font-size: 2.5rem;
@@ -349,7 +316,6 @@
             background: linear-gradient(90deg, var(--primary), var(--secondary));
         }
 
-        /* About Section */
         .about-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -359,16 +325,9 @@
             align-items: center;
         }
 
-        .about-text p {
-            margin-bottom: 1.5rem;
-            color: rgba(224, 224, 255, 0.8);
-        }
+        .about-text p { margin-bottom: 1.5rem; color: rgba(224, 224, 255, 0.8); }
 
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
+        .about-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 
         .stat {
             background: rgba(10, 10, 22, 0.7);
@@ -379,10 +338,7 @@
             transition: var(--transition);
         }
 
-        .stat:hover {
-            border-color: rgba(0, 255, 136, 0.3);
-            transform: translateY(-5px);
-        }
+        .stat:hover { border-color: rgba(0, 255, 136, 0.3); transform: translateY(-5px); }
 
         .stat-value {
             font-size: 2.5rem;
@@ -394,12 +350,8 @@
             margin-bottom: 0.5rem;
         }
 
-        .stat-label {
-            font-size: 0.9rem;
-            color: rgba(224, 224, 255, 0.7);
-        }
+        .stat-label { font-size: 0.9rem; color: rgba(224, 224, 255, 0.7); }
 
-        /* Skills Section */
         .skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -418,40 +370,14 @@
             overflow: hidden;
         }
 
-        .skill-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(0, 255, 136, 0.3);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
+        .skill-card:hover { transform: translateY(-10px); border-color: rgba(0, 255, 136, 0.3); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+        .skill-card.cybersecurity { border-color: rgba(255, 42, 109, 0.2); }
+        .skill-card.cybersecurity:hover { border-color: rgba(255, 42, 109, 0.4); }
+        .skill-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary); }
+        .skill-card.cybersecurity h3 { color: var(--accent); }
+        .skill-card p { color: rgba(224, 224, 255, 0.7); margin-bottom: 1.5rem; }
 
-        .skill-card.cybersecurity {
-            border-color: rgba(255, 42, 109, 0.2);
-        }
-
-        .skill-card.cybersecurity:hover {
-            border-color: rgba(255, 42, 109, 0.4);
-        }
-
-        .skill-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .skill-card.cybersecurity h3 {
-            color: var(--accent);
-        }
-
-        .skill-card p {
-            color: rgba(224, 224, 255, 0.7);
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 
         .skill-tag {
             background: rgba(0, 255, 136, 0.1);
@@ -461,12 +387,8 @@
             font-size: 0.8rem;
         }
 
-        .skill-card.cybersecurity .skill-tag {
-            background: rgba(255, 42, 109, 0.1);
-            color: var(--accent);
-        }
+        .skill-card.cybersecurity .skill-tag { background: rgba(255, 42, 109, 0.1); color: var(--accent); }
 
-        /* Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -484,11 +406,7 @@
             position: relative;
         }
 
-        .project-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(0, 255, 136, 0.3);
-            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.1);
-        }
+        .project-card:hover { transform: translateY(-10px); border-color: rgba(0, 255, 136, 0.3); box-shadow: 0 10px 30px rgba(0, 255, 136, 0.1); }
 
         .project-img {
             position: relative;
@@ -501,27 +419,11 @@
             color: var(--dark);
         }
 
-        .project-content {
-            padding: 1.5rem;
-        }
+        .project-content { padding: 1.5rem; }
+        .project-content h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--primary); }
+        .project-content p { color: rgba(224, 224, 255, 0.7); margin-bottom: 1rem; }
 
-        .project-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-
-        .project-content p {
-            color: rgba(224, 224, 255, 0.7);
-            margin-bottom: 1rem;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
+        .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
 
         .project-tags span {
             background: rgba(0, 255, 136, 0.1);
@@ -531,10 +433,7 @@
             font-size: 0.8rem;
         }
 
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
+        .project-links { display: flex; gap: 1rem; }
 
         .project-links a {
             color: var(--light);
@@ -546,11 +445,8 @@
             gap: 0.5rem;
         }
 
-        .project-links a:hover {
-            color: var(--primary);
-        }
+        .project-links a:hover { color: var(--primary); }
 
-        /* Project Status Styles */
         .project-status {
             position: absolute;
             top: 15px;
@@ -581,13 +477,11 @@
             100% { opacity: 1; }
         }
 
-        /* In-progress project specific styles */
         .project-card:nth-child(3) .project-img,
         .project-card:nth-child(4) .project-img {
             background: linear-gradient(135deg, #ff6b9d, var(--accent));
         }
 
-        /* Contact Section */
         .contact-container {
             max-width: 800px;
             margin: 0 auto;
@@ -596,17 +490,9 @@
             gap: 3rem;
         }
 
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
+        .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
+        .contact-item { display: flex; align-items: center; gap: 1rem; }
 
         .contact-icon {
             width: 50px;
@@ -620,21 +506,9 @@
             color: var(--primary);
         }
 
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .form-group label {
-            font-weight: 500;
-        }
+        .contact-form { display: flex; flex-direction: column; gap: 1.5rem; }
+        .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+        .form-group label { font-weight: 500; }
 
         .form-group input,
         .form-group textarea {
@@ -648,11 +522,7 @@
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
-        }
+        .form-group textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 10px rgba(0, 255, 136, 0.2); }
 
         .submit-btn {
             padding: 0.8rem 2rem;
@@ -666,12 +536,8 @@
             align-self: flex-start;
         }
 
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
-        }
+        .submit-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3); }
 
-        /* Footer */
         footer {
             background: rgba(5, 5, 16, 0.9);
             padding: 3rem 5%;
@@ -679,12 +545,7 @@
             border-top: 1px solid rgba(0, 255, 136, 0.1);
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
+        .social-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; }
 
         .social-links a {
             width: 50px;
@@ -699,17 +560,9 @@
             transition: var(--transition);
         }
 
-        .social-links a:hover {
-            background: var(--primary);
-            color: var(--dark);
-            transform: translateY(-5px);
-        }
+        .social-links a:hover { background: var(--primary); color: var(--dark); transform: translateY(-5px); }
+        .copyright { color: rgba(224, 224, 255, 0.5); font-size: 0.9rem; }
 
-        .copyright {
-            color: rgba(224, 224, 255, 0.5);
-            font-size: 0.9rem;
-        }
-        
         .built-with {
             color: rgba(224, 224, 255, 0.7);
             font-size: 1rem;
@@ -720,10 +573,7 @@
             gap: 0.5rem;
         }
 
-        .built-with .fa-heart {
-            color: var(--accent);
-            animation: heartbeat 1.5s ease-in-out infinite;
-        }
+        .built-with .fa-heart { color: var(--accent); animation: heartbeat 1.5s ease-in-out infinite; }
 
         @keyframes heartbeat {
             0% { transform: scale(1); }
@@ -734,7 +584,6 @@
             100% { transform: scale(1); }
         }
 
-        /* Chatbot Styles */
         .chatbot-toggle {
             position: fixed;
             bottom: 30px;
@@ -754,9 +603,7 @@
             transition: var(--transition);
         }
 
-        .chatbot-toggle:hover {
-            transform: scale(1.1);
-        }
+        .chatbot-toggle:hover { transform: scale(1.1); }
 
         .chatbot-container {
             position: fixed;
@@ -779,11 +626,7 @@
             backdrop-filter: blur(10px);
         }
 
-        .chatbot-container.active {
-            transform: translateY(0);
-            opacity: 1;
-            visibility: visible;
-        }
+        .chatbot-container.active { transform: translateY(0); opacity: 1; visibility: visible; }
 
         .chatbot-header {
             padding: 1rem;
@@ -806,9 +649,7 @@
             color: var(--dark);
         }
 
-        .chatbot-title {
-            font-weight: 600;
-        }
+        .chatbot-title { font-weight: 600; }
 
         .chatbot-status {
             font-size: 0.8rem;
@@ -818,49 +659,15 @@
             gap: 0.3rem;
         }
 
-        .chatbot-status-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--primary);
-            animation: pulse-dot 2s infinite;
-        }
+        .chatbot-status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--primary); animation: pulse-dot 2s infinite; }
 
-        .chatbot-messages {
-            flex: 1;
-            padding: 1rem;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
+        .chatbot-messages { flex: 1; padding: 1rem; overflow-y: auto; display: flex; flex-direction: column; gap: 1rem; }
 
-        .message {
-            max-width: 80%;
-            padding: 0.8rem 1rem;
-            border-radius: 15px;
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
+        .message { max-width: 80%; padding: 0.8rem 1rem; border-radius: 15px; font-size: 0.9rem; line-height: 1.4; }
+        .message.bot { align-self: flex-start; background: rgba(0, 255, 136, 0.1); border-bottom-left-radius: 5px; }
+        .message.user { align-self: flex-end; background: rgba(0, 102, 255, 0.2); border-bottom-right-radius: 5px; }
 
-        .message.bot {
-            align-self: flex-start;
-            background: rgba(0, 255, 136, 0.1);
-            border-bottom-left-radius: 5px;
-        }
-
-        .message.user {
-            align-self: flex-end;
-            background: rgba(0, 102, 255, 0.2);
-            border-bottom-right-radius: 5px;
-        }
-
-        .chatbot-input {
-            padding: 1rem;
-            border-top: 1px solid rgba(0, 255, 136, 0.2);
-            display: flex;
-            gap: 0.5rem;
-        }
+        .chatbot-input { padding: 1rem; border-top: 1px solid rgba(0, 255, 136, 0.2); display: flex; gap: 0.5rem; }
 
         .chatbot-input input {
             flex: 1;
@@ -872,10 +679,7 @@
             font-size: 0.9rem;
         }
 
-        .chatbot-input input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
+        .chatbot-input input:focus { outline: none; border-color: var(--primary); }
 
         .chatbot-send {
             width: 40px;
@@ -890,288 +694,37 @@
             transition: var(--transition);
         }
 
-        .chatbot-send:hover {
-            transform: scale(1.1);
-        }
+        .chatbot-send:hover { transform: scale(1.1); }
 
-        .suggested-questions {
-            padding: 0.5rem 1rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            border-top: 1px solid rgba(0, 255, 136, 0.1);
-        }
+        .suggested-questions { padding: 0.5rem 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; border-top: 1px solid rgba(0, 255, 136, 0.1); }
 
-        .suggested-question {
-            padding: 0.4rem 0.8rem;
-            background: rgba(0, 255, 136, 0.1);
-            border-radius: 15px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .suggested-question:hover {
-            background: rgba(0, 255, 136, 0.2);
-        }
-
-        /* Mobile Responsive Styles */
-        @media (max-width: 1200px) {
-            .hero-text h1 {
-                font-size: 3rem;
-            }
-            
-            .floating-card {
-                width: 280px;
-                height: 280px;
-            }
-        }
+        .suggested-question { padding: 0.4rem 0.8rem; background: rgba(0, 255, 136, 0.1); border-radius: 15px; font-size: 0.8rem; cursor: pointer; transition: var(--transition); }
+        .suggested-question:hover { background: rgba(0, 255, 136, 0.2); }
 
         @media (max-width: 992px) {
-            .hero-content, .about-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 3rem;
-            }
-            
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .chatbot-container {
-                width: 300px;
-                height: 450px;
-            }
-            
-            .hero-text h1 {
-                font-size: 2.8rem;
-            }
-            
-            .tagline {
-                font-size: 1.3rem;
-            }
-            
-            .hero-text p {
-                font-size: 1.1rem;
-            }
+            .hero-content, .about-container { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
+            .contact-container { grid-template-columns: 1fr; }
+            .about-stats { grid-template-columns: repeat(2, 1fr); }
+            .chatbot-container { width: 300px; height: 450px; }
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: rgba(10, 10, 22, 0.95);
-                flex-direction: column;
-                padding: 1.5rem 0;
-                text-align: center;
-                border-top: 1px solid rgba(0, 255, 136, 0.1);
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .nav-links a {
-                padding: 0.8rem 0;
-                font-size: 1.1rem;
-            }
-            
-            .mobile-menu-toggle {
-                display: flex;
-            }
-            
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-            
-            .floating-card {
-                width: 250px;
-                height: 250px;
-            }
-            
-            .avatar {
-                width: 100px;
-                height: 100px;
-                font-size: 2rem;
-            }
-            
-            .cta-buttons {
-                justify-content: center;
-            }
-            
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .skills-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-stats {
-                grid-template-columns: 1fr;
-            }
-            
-            .stat-value {
-                font-size: 2rem;
-            }
-            
-            .chatbot-container {
-                width: calc(100% - 40px);
-                right: 20px;
-                bottom: 90px;
-            }
-            
-            .chatbot-toggle {
-                width: 55px;
-                height: 55px;
-                bottom: 20px;
-                right: 20px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero-text h1 {
-                font-size: 2.2rem;
-            }
-            
-            .tagline {
-                font-size: 1.2rem;
-            }
-            
-            .hero-text p {
-                font-size: 1rem;
-            }
-            
-            .floating-card {
-                width: 220px;
-                height: 220px;
-                padding: 1.5rem;
-            }
-            
-            .avatar {
-                width: 80px;
-                height: 80px;
-                font-size: 1.8rem;
-                margin-bottom: 1rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .section-title p {
-                font-size: 1rem;
-            }
-            
-            .about-text p {
-                font-size: 1rem;
-            }
-            
-            .skill-card, .project-card {
-                padding: 1.5rem;
-            }
-            
-            .project-img {
-                height: 180px;
-                font-size: 2.5rem;
-            }
-            
-            .contact-item {
-                flex-direction: column;
-                text-align: center;
-                gap: 0.5rem;
-            }
-            
-            .contact-icon {
-                width: 45px;
-                height: 45px;
-                font-size: 1.1rem;
-            }
-            
-            .social-links a {
-                width: 45px;
-                height: 45px;
-                font-size: 1.1rem;
-            }
-            
-            .cta-button {
-                padding: 0.7rem 1.5rem;
-                font-size: 0.9rem;
-            }
-            
-            .submit-btn {
-                padding: 0.7rem 1.5rem;
-                font-size: 0.9rem;
-                align-self: stretch;
-            }
-            
-            .built-with {
-                font-size: 0.9rem;
-            }
-            
-            .copyright {
-                font-size: 0.8rem;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .hero-text h1 {
-                font-size: 1.8rem;
-            }
-            
-            .tagline {
-                font-size: 1.1rem;
-            }
-            
-            .floating-card {
-                width: 200px;
-                height: 200px;
-            }
-            
-            .avatar {
-                width: 70px;
-                height: 70px;
-                font-size: 1.5rem;
-            }
-            
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-            
-            .project-img {
-                height: 160px;
-                font-size: 2rem;
-            }
-            
-            .skill-card, .project-card {
-                padding: 1.2rem;
-            }
-            
-            .chatbot-container {
-                height: 400px;
-            }
+            .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: rgba(10, 10, 22, 0.95); flex-direction: column; padding: 1.5rem 0; text-align: center; border-top: 1px solid rgba(0, 255, 136, 0.1); }
+            .nav-links.active { display: flex; }
+            .mobile-menu-toggle { display: flex; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .floating-card { width: 250px; height: 250px; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .skills-container { grid-template-columns: 1fr; }
+            .about-stats { grid-template-columns: 1fr; }
+            .chatbot-container { width: calc(100% - 40px); right: 20px; bottom: 90px; }
         }
     </style>
 </head>
 <body>
-    <!-- Background Animation -->
     <div class="bg-animation"></div>
-    
-    <!-- Matrix Rain Effect -->
     <canvas class="matrix-rain" id="matrixCanvas"></canvas>
 
-    <!-- Navigation -->
     <nav>
         <a href="#" class="logo">ANIKET</a>
         <div class="nav-links" id="navLinks">
@@ -1181,13 +734,10 @@
             <a href="#contact">Contact</a>
         </div>
         <div class="mobile-menu-toggle" id="mobileMenuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
@@ -1201,9 +751,7 @@
             </div>
             <div class="hero-visual">
                 <div class="floating-card">
-                    <div class="avatar">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
+                    <div class="avatar"><i class="fas fa-shield-alt"></i></div>
                     <h3>Aniket Singh</h3>
                     <p>Cybersecurity Beginner</p>
                     <div class="status">
@@ -1215,7 +763,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <div class="section-title">
             <h2>About Me</h2>
@@ -1230,27 +777,14 @@
                 <p><strong>My Motto:</strong> "Code securely, build smartly, and keep learning."</p>
             </div>
             <div class="about-stats">
-                <div class="stat">
-                    <div class="stat-value">20+</div>
-                    <div class="stat-label">Projects Completed</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-value">8</div>
-                    <div class="stat-label">Programming Languages</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-value">100+</div>
-                    <div class="stat-label">LeetCode Problems</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-value">2</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
+                <div class="stat"><div class="stat-value">20+</div><div class="stat-label">Projects Completed</div></div>
+                <div class="stat"><div class="stat-value">8</div><div class="stat-label">Programming Languages</div></div>
+                <div class="stat"><div class="stat-value">100+</div><div class="stat-label">LeetCode Problems</div></div>
+                <div class="stat"><div class="stat-value">2</div><div class="stat-label">Years Experience</div></div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills">
         <div class="section-title">
             <h2>My Skills</h2>
@@ -1271,44 +805,33 @@
                 <h3>Programming Languages</h3>
                 <p>Proficient in multiple languages for diverse development needs.</p>
                 <div class="skill-tags">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Java</span>
-                    <span class="skill-tag">C#</span>
-                    <span class="skill-tag">C</span>
-                    <span class="skill-tag">C++</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">Python</span><span class="skill-tag">Java</span>
+                    <span class="skill-tag">C#</span><span class="skill-tag">C</span>
+                    <span class="skill-tag">C++</span><span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">SQL</span><span class="skill-tag">HTML/CSS</span>
                 </div>
             </div>
             <div class="skill-card">
                 <h3>AI & Machine Learning</h3>
                 <p>Developing intelligent systems and algorithms.</p>
                 <div class="skill-tags">
-                    <span class="skill-tag">Neural Networks</span>
-                    <span class="skill-tag">Data Analysis</span>
-                    <span class="skill-tag">Computer Vision</span>
-                    <span class="skill-tag">Automation</span>
+                    <span class="skill-tag">Neural Networks</span><span class="skill-tag">Data Analysis</span>
+                    <span class="skill-tag">Computer Vision</span><span class="skill-tag">Automation</span>
                 </div>
             </div>
             <div class="skill-card">
                 <h3>Web Development</h3>
                 <p>Full-stack development with modern frameworks and tools.</p>
                 <div class="skill-tags">
-                    <span class="skill-tag">MERN Stack</span>
-                    <span class="skill-tag">React.js</span>
-                    <span class="skill-tag">Node.js</span>
-                    <span class="skill-tag">MongoDB</span>
-                    <span class="skill-tag">Express.js</span>
-                    <span class="skill-tag">ASP.NET</span>
-                    <span class="skill-tag">MySQL</span>
-                    <span class="skill-tag">SQL Server</span>
+                    <span class="skill-tag">MERN Stack</span><span class="skill-tag">React.js</span>
+                    <span class="skill-tag">Node.js</span><span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">Express.js</span><span class="skill-tag">ASP.NET</span>
+                    <span class="skill-tag">MySQL</span><span class="skill-tag">SQL Server</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects">
         <div class="section-title">
             <h2>My Projects</h2>
@@ -1316,115 +839,84 @@
         </div>
         <div class="projects-grid">
             <div class="project-card">
-                <div class="project-img">
-                    <i class="fas fa-shopping-cart"></i>
-                </div>
+                <div class="project-img"><i class="fas fa-shopping-cart"></i></div>
                 <div class="project-content">
                     <h3>E-commerce Platform</h3>
                     <p>A full-featured MERN stack e-commerce solution with user authentication, product management, and secure payment processing.</p>
-                    <div class="project-tags">
-                        <span>MERN Stack</span>
-                        <span>JWT Auth</span>
-                        <span>Stripe API</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Singhaniket2110" target="_blank"><i class="fab fa-github"></i> Source Code</a>
-                    </div>
+                    <div class="project-tags"><span>MERN Stack</span><span>JWT Auth</span><span>Stripe API</span></div>
+                    <div class="project-links"><a href="https://github.com/Singhaniket2110" target="_blank"><i class="fab fa-github"></i> Source Code</a></div>
                 </div>
             </div>
             <div class="project-card">
-                <div class="project-img">
-                    <i class="fas fa-briefcase"></i>
-                </div>
+                <div class="project-img"><i class="fas fa-briefcase"></i></div>
                 <div class="project-content">
                     <h3>Job Portal</h3>
                     <p>A LinkedIn-inspired job portal built with MERN stack, featuring job listings, user profiles, and application tracking.</p>
-                    <div class="project-tags">
-                        <span>MERN Stack</span>
-                        <span>REST API</span>
-                        <span>MongoDB</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Singhaniket2110" target="_blank"><i class="fab fa-github"></i> Source Code</a>
-                    </div>
+                    <div class="project-tags"><span>MERN Stack</span><span>REST API</span><span>MongoDB</span></div>
+                    <div class="project-links"><a href="https://github.com/Singhaniket2110" target="_blank"><i class="fab fa-github"></i> Source Code</a></div>
                 </div>
             </div>
             <div class="project-card">
-                <div class="project-img">
-                    <i class="fas fa-brain"></i>
-                    <div class="project-status">In Progress</div>
-                </div>
+                <div class="project-img"><i class="fas fa-brain"></i><div class="project-status">In Progress</div></div>
                 <div class="project-content">
                     <h3>Aurion AI <span class="status-badge">Developing</span></h3>
                     <p>An offline AI assistant with local processing capabilities, focusing on privacy and security without cloud dependencies.</p>
-                    <div class="project-tags">
-                        <span>Python</span>
-                         <span>HTML</span>
-                        <span>Machine Learning</span>
-                        <span>Local AI</span>
-                        <span>Privacy-focused</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Singhaniket2110" target="_blank"><i class="fab fa-github"></i> Source Code</a>
-                    </div>
+                    <div class="project-tags"><span>Python</span><span>HTML</span><span>Machine Learning</span><span>Local AI</span><span>Privacy-focused</span></div>
+                    <div class="project-links"><a href="https://github.com/Singhaniket2110" target="_blank"><i class="fab fa-github"></i> Source Code</a></div>
                 </div>
             </div>
             <div class="project-card">
-                <div class="project-img">
-                    <i class="fas fa-university"></i>
-                    <div class="project-status">In Progress</div>
-                </div>
+                <div class="project-img"><i class="fas fa-university"></i><div class="project-status">In Progress</div></div>
                 <div class="project-content">
                     <h3>AcadEase <span class="status-badge">Developing</span></h3>
                     <p>An E-counter website for college administration, streamlining student services and administrative tasks with modern web technologies.</p>
-                    <div class="project-tags">
-                        <span>C#</span>
-                        <span>.NET</span>
-                        <span>SQL Server</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Singhaniket2110" target="_blank"><i class="fab fa-github"></i> Source Code</a>
-                    </div>
+                    <div class="project-tags"><span>C#</span><span>.NET</span><span>SQL Server</span></div>
+                    <div class="project-links"><a href="https://github.com/Singhaniket2110" target="_blank"><i class="fab fa-github"></i> Source Code</a></div>
                 </div>
             </div>
             <div class="project-card">
-                <div class="project-img">
-                    <i class="fas fa-plane"></i>
-                </div>
+                <div class="project-img"><i class="fas fa-plane"></i></div>
                 <div class="project-content">
                     <h3>Airline Management System</h3>
                     <p>A comprehensive system for managing airline operations, bookings, and customer data with secure transactions.</p>
-                    <div class="project-tags">
-                        <span>PHP</span>
-                        <span>Bootstrap</span>
-                        <span>MySQL</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Singhaniket2110" target="_blank"><i class="fab fa-github"></i> Source Code</a>
-                    </div>
+                    <div class="project-tags"><span>PHP</span><span>Bootstrap</span><span>MySQL</span></div>
+                    <div class="project-links"><a href="https://github.com/Singhaniket2110" target="_blank"><i class="fab fa-github"></i> Source Code</a></div>
                 </div>
             </div>
             <div class="project-card">
-                <div class="project-img">
-                    <i class="fas fa-cloud-sun"></i>
-                </div>
+                <div class="project-img"><i class="fas fa-cloud-sun"></i></div>
                 <div class="project-content">
                     <h3>Weather Webpage</h3>
                     <p>A responsive weather application that displays current conditions and forecasts with an intuitive user interface.</p>
+                    <div class="project-tags"><span>JavaScript</span><span>API Integration</span><span>Responsive Design</span></div>
+                    <div class="project-links"><a href="https://github.com/Singhaniket2110" target="_blank"><i class="fab fa-github"></i> Source Code</a></div>
+                </div>
+            </div>
+
+            <!-- ✅ NEW PROJECT ADDED -->
+            <div class="project-card">
+                <div class="project-img" style="background: linear-gradient(135deg, #0066ff, #00ff88);">
+                    <i class="fas fa-book-reader"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Library Visitor Management</h3>
+                    <p>A smart library visitor management system that tracks entries, manages visitor logs, and streamlines library administration with a clean and modern interface.</p>
                     <div class="project-tags">
                         <span>JavaScript</span>
-                        <span>API Integration</span>
-                        <span>Responsive Design</span>
+                        <span>HTML/CSS</span>
+                        <span>Vercel</span>
+                        <span>Visitor Tracking</span>
                     </div>
                     <div class="project-links">
+                        <a href="https://libraray-visitor-management.vercel.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                         <a href="https://github.com/Singhaniket2110" target="_blank"><i class="fab fa-github"></i> Source Code</a>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <div class="section-title">
             <h2>Get In Touch</h2>
@@ -1433,40 +925,20 @@
         <div class="contact-container">
             <div class="contact-info">
                 <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div>
-                        <h3>Email</h3>
-                        <p>aniket.vpsingh@gmail.com</p>
-                    </div>
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div><h3>Email</h3><p>aniket.vpsingh@gmail.com</p></div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fab fa-github"></i>
-                    </div>
-                    <div>
-                        <h3>GitHub</h3>
-                        <p>github.com/Singhaniket2110</p>
-                    </div>
+                    <div class="contact-icon"><i class="fab fa-github"></i></div>
+                    <div><h3>GitHub</h3><p>github.com/Singhaniket2110</p></div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fab fa-linkedin"></i>
-                    </div>
-                    <div>
-                        <h3>LinkedIn</h3>
-                        <p>in/aniket-virendra-pratap-singh-aniket21</p>
-                    </div>
+                    <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                    <div><h3>LinkedIn</h3><p>in/aniket-virendra-pratap-singh-aniket21</p></div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <div>
-                        <h3>LeetCode</h3>
-                        <p>leetcode.com/u/aniket2110</p>
-                    </div>
+                    <div class="contact-icon"><i class="fas fa-code"></i></div>
+                    <div><h3>LeetCode</h3><p>leetcode.com/u/aniket2110</p></div>
                 </div>
             </div>
             <form class="contact-form" id="contactForm">
@@ -1491,7 +963,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="social-links">
             <a href="https://github.com/Singhaniket2110" target="_blank"><i class="fab fa-github"></i></a>
@@ -1503,28 +974,18 @@
         <p class="copyright">© 2024 Aniket Singh. All rights reserved.</p>
     </footer>
 
-    <!-- Chatbot -->
-    <div class="chatbot-toggle" id="chatbotToggle">
-        <i class="fas fa-robot"></i>
-    </div>
+    <div class="chatbot-toggle" id="chatbotToggle"><i class="fas fa-robot"></i></div>
 
     <div class="chatbot-container" id="chatbotContainer">
         <div class="chatbot-header">
-            <div class="chatbot-avatar">
-                <i class="fas fa-robot"></i>
-            </div>
+            <div class="chatbot-avatar"><i class="fas fa-robot"></i></div>
             <div>
                 <div class="chatbot-title">Aniket's ChatBot</div>
-                <div class="chatbot-status">
-                    <div class="chatbot-status-dot"></div>
-                    <span>Online</span>
-                </div>
+                <div class="chatbot-status"><div class="chatbot-status-dot"></div><span>Online</span></div>
             </div>
         </div>
         <div class="chatbot-messages" id="chatbotMessages">
-            <div class="message bot">
-                Hi! I'm Aniket's AI assistant. How can I help you learn more about him?
-            </div>
+            <div class="message bot">Hi! I'm Aniket's AI assistant. How can I help you learn more about him?</div>
         </div>
         <div class="suggested-questions">
             <div class="suggested-question" data-question="What are Aniket's skills?">Skills</div>
@@ -1534,149 +995,67 @@
         </div>
         <div class="chatbot-input">
             <input type="text" id="chatbotInput" placeholder="Ask me about Aniket...">
-            <div class="chatbot-send" id="chatbotSend">
-                <i class="fas fa-paper-plane"></i>
-            </div>
+            <div class="chatbot-send" id="chatbotSend"><i class="fas fa-paper-plane"></i></div>
         </div>
     </div>
 
     <script>
-        // Matrix Rain Effect
         const canvas = document.getElementById('matrixCanvas');
         const ctx = canvas.getContext('2d');
-        
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        
         const characters = '01';
         const fontSize = 14;
         const columns = canvas.width / fontSize;
-        
         const drops = [];
-        for (let i = 0; i < columns; i++) {
-            drops[i] = 1;
-        }
-        
+        for (let i = 0; i < columns; i++) drops[i] = 1;
         function drawMatrix() {
             ctx.fillStyle = 'rgba(5, 5, 16, 0.04)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
             ctx.fillStyle = '#00ff88';
             ctx.font = fontSize + 'px monospace';
-            
             for (let i = 0; i < drops.length; i++) {
                 const text = characters.charAt(Math.floor(Math.random() * characters.length));
                 ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                
-                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-                
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
                 drops[i]++;
             }
         }
-        
         setInterval(drawMatrix, 35);
-        
-        // Handle window resize
-        window.addEventListener('resize', function() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-        
-        // Mobile menu toggle
+        window.addEventListener('resize', function() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+
         const mobileMenuToggle = document.getElementById('mobileMenuToggle');
         const navLinks = document.getElementById('navLinks');
-        
-        mobileMenuToggle.addEventListener('click', function() {
-            this.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
+        mobileMenuToggle.addEventListener('click', function() { this.classList.toggle('active'); navLinks.classList.toggle('active'); });
+        document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', function() { mobileMenuToggle.classList.remove('active'); navLinks.classList.remove('active'); }); });
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e) { e.preventDefault(); document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' }); }); });
 
-        // Simple scroll animation for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Add subtle animation to elements on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; } });
         }, observerOptions);
-
         document.querySelectorAll('.skill-card, .project-card, .stat').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            observer.observe(card);
+            card.style.opacity = '0'; card.style.transform = 'translateY(20px)'; card.style.transition = 'opacity 0.5s ease, transform 0.5s ease'; observer.observe(card);
         });
 
-        // Form submission handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
-        });
+        document.getElementById('contactForm').addEventListener('submit', function(e) { e.preventDefault(); alert('Thank you for your message! I will get back to you soon.'); this.reset(); });
 
-        // Chatbot functionality
         const chatbotToggle = document.getElementById('chatbotToggle');
         const chatbotContainer = document.getElementById('chatbotContainer');
         const chatbotMessages = document.getElementById('chatbotMessages');
         const chatbotInput = document.getElementById('chatbotInput');
         const chatbotSend = document.getElementById('chatbotSend');
-        const suggestedQuestions = document.querySelectorAll('.suggested-question');
+        chatbotToggle.addEventListener('click', function() { chatbotContainer.classList.toggle('active'); });
+        document.addEventListener('click', function(event) { if (!chatbotContainer.contains(event.target) && !chatbotToggle.contains(event.target)) { chatbotContainer.classList.remove('active'); } });
 
-        // Toggle chatbot visibility
-        chatbotToggle.addEventListener('click', function() {
-            chatbotContainer.classList.toggle('active');
-        });
-
-        // Close chatbot when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!chatbotContainer.contains(event.target) && !chatbotToggle.contains(event.target)) {
-                chatbotContainer.classList.remove('active');
-            }
-        });
-
-        // Send message function
         function sendMessage() {
             const message = chatbotInput.value.trim();
             if (message === '') return;
-
-            // Add user message
             addMessage(message, 'user');
             chatbotInput.value = '';
-
-            // Generate bot response
-            setTimeout(() => {
-                const response = generateResponse(message);
-                addMessage(response, 'bot');
-            }, 1000);
+            setTimeout(() => { const response = generateResponse(message); addMessage(response, 'bot'); }, 1000);
         }
 
-        // Add message to chat
         function addMessage(text, sender) {
             const messageElement = document.createElement('div');
             messageElement.classList.add('message', sender);
@@ -1685,66 +1064,20 @@
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         }
 
-        // Generate bot response
         function generateResponse(message) {
             const lowerMessage = message.toLowerCase();
-
-            // Skills related questions
-            if (lowerMessage.includes('skill') || lowerMessage.includes('technology') || lowerMessage.includes('programming')) {
-                return "Aniket has expertise in:\n- Programming: Python, Java, C#, C, C++, JavaScript, SQL\n- Web Development: MERN Stack, ASP.NET, HTML/CSS\n- Cybersecurity: Network Security, Encryption, Vulnerability Assessment\n- AI/ML: TensorFlow, Neural Networks, Data Analysis\n- Tools: Git, GitHub, VS Code, MySQL, SQL Server";
-            }
-
-            // Projects related questions
-            else if (lowerMessage.includes('project') || lowerMessage.includes('work') || lowerMessage.includes('portfolio')) {
-                return "Aniket has worked on several projects:\n- E-commerce Platform (MERN Stack)\n- Job Portal (MERN Stack, similar to LinkedIn)\n- AcadEase (E-counter website for college)\n- Airline Management System (C#, .NET)\n- Weather Webpage\nYou can find more details on his GitHub: github.com/Singhaniket2110";
-            }
-
-            // Contact related questions
-            else if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('reach')) {
-                return "You can contact Aniket through:\n- Email: aniket.vpsingh@gmail.com\n- LinkedIn: linkedin.com/in/aniket-virendra-pratap-singh-aniket21\n- GitHub: github.com/Singhaniket2110\n- LeetCode: leetcode.com/u/aniket2110";
-            }
-
-            // Education related questions
-            else if (lowerMessage.includes('education') || lowerMessage.includes('study') || lowerMessage.includes('degree')) {
-                return "Aniket is currently pursuing a B.Sc. in Information Technology. He's passionate about Cybersecurity and AI, and is constantly learning new technologies through projects and online platforms like LeetCode where he's solved 1000+ problems.";
-            }
-
-            // About related questions
-            else if (lowerMessage.includes('about') || lowerMessage.includes('who') || lowerMessage.includes('introduce')) {
-                return "Aniket Singh is a B.Sc. IT Student specializing in Cybersecurity and AI. He's passionate about building secure digital solutions and intelligent systems. His motto is 'Code securely, build smartly, and keep learning.' He's open to collaborations on software, cybersecurity, and AI-related projects.";
-            }
-
-            // Experience related questions
-            else if (lowerMessage.includes('experience') || lowerMessage.includes('year') || lowerMessage.includes('work experience')) {
-                return "Aniket has 2+ years of experience in software development with a focus on cybersecurity and AI. He has completed 20+ projects and solved 1000+ coding problems on LeetCode to sharpen his skills.";
-            }
-
-            // Interests related questions
-            else if (lowerMessage.includes('interest') || lowerMessage.includes('hobby') || lowerMessage.includes('passion')) {
-                return "Aniket is passionate about:\n- Cybersecurity concepts and practices\n- Artificial Intelligence and Machine Learning\n- Solving real-world problems with code\n- Participating in CTF challenges\n- Researching security vulnerabilities\n- Contributing to open-source projects";
-            }
-
-            // Default response
-            else {
-                return "I'm not sure I understand. You can ask me about Aniket's skills, projects, education, contact information, or experience. Try clicking one of the suggested questions above!";
-            }
+            if (lowerMessage.includes('skill') || lowerMessage.includes('technology')) return "Aniket has expertise in:\n- Programming: Python, Java, C#, JavaScript, SQL\n- Web: MERN Stack, ASP.NET\n- Cybersecurity: Network Security, Penetration Testing\n- AI/ML: Neural Networks, Data Analysis";
+            else if (lowerMessage.includes('project') || lowerMessage.includes('work')) return "Aniket's projects include:\n- E-commerce Platform\n- Job Portal\n- Library Visitor Management (Live!)\n- AcadEase (In Progress)\n- Airline Management System\n- Weather Webpage\nGitHub: github.com/Singhaniket2110";
+            else if (lowerMessage.includes('contact') || lowerMessage.includes('email')) return "Contact Aniket:\n- Email: aniket.vpsingh@gmail.com\n- LinkedIn: linkedin.com/in/aniket-virendra-pratap-singh-aniket21\n- GitHub: github.com/Singhaniket2110";
+            else if (lowerMessage.includes('education') || lowerMessage.includes('study')) return "Aniket is pursuing B.Sc. in Information Technology, specializing in Cybersecurity and AI.";
+            else if (lowerMessage.includes('library')) return "The Library Visitor Management System is a live project! Check it out at: libraray-visitor-management.vercel.app";
+            else return "You can ask me about Aniket's skills, projects, education, or contact info!";
         }
 
-        // Event listeners for chatbot
         chatbotSend.addEventListener('click', sendMessage);
-        chatbotInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                sendMessage();
-            }
-        });
-
-        // Suggested questions
-        suggestedQuestions.forEach(question => {
-            question.addEventListener('click', function() {
-                const questionText = this.getAttribute('data-question');
-                chatbotInput.value = questionText;
-                sendMessage();
-            });
+        chatbotInput.addEventListener('keypress', function(e) { if (e.key === 'Enter') sendMessage(); });
+        document.querySelectorAll('.suggested-question').forEach(question => {
+            question.addEventListener('click', function() { chatbotInput.value = this.getAttribute('data-question'); sendMessage(); });
         });
     </script>
 </body>
